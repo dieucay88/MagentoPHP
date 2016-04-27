@@ -1,0 +1,89 @@
+<?xml version="1.0" ?>
+<config>
+    <modules>
+        <Magento_Example>
+            <version>0.1.0</version>
+        </Magento_Example>
+    </modules>
+
+    <admin>
+        <routers>
+            <giangadmin>
+                <use>admin</use>
+                <args>
+                    <module>Magento_Example</module>
+                    <frontName>giangadmin</frontName>
+                </args>
+            </giangadmin>
+        </routers>
+    </admin>
+    <adminhtml>
+        <menu>
+            <example translate="title" module="giangadmin">
+                <title>Giang Admin</title>
+                <sort_oder>9999</sort_oder>
+                <children>
+                    <first_page module="giangadmin">
+                        <title>Our First Page</title>
+                        <action>giangadmin/index/index</action>
+                    </first_page>
+                </children>
+            </example>
+
+            <system>
+                <children>
+                    <first_page>
+                        <title>Here Too</title>
+                        <action>giangadmin/index/index</action>
+                    </first_page>
+                </children>
+            </system>
+        </menu>
+    </adminhtml>
+    <global>
+        <helpers>
+            <magento_example>
+                <class>Magento_Example_Helper</class>
+            </magento_example>
+        </helpers>
+    </global>
+</config>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

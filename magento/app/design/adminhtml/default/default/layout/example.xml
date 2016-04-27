@@ -1,0 +1,14 @@
+<?xml version="1.0" ?>
+<layout version="0.1.0">
+    <adminhtml_example_edit>
+        <reference name="example_edit_tabs">
+            <block type="magento_example/adminhtml_example_edit_tab_example" name="tab_example_main"
+                   template="magento_example/example/example/example.phtml">
+            </block>
+            <action method="addTab">
+                <name>magento_example</name>
+                <block>tab_example_edit</block>
+            </action>
+        </reference>
+    </adminhtml_example_edit>
+</layout>
