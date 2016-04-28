@@ -1,0 +1,73 @@
+<div class="cart display-single-price">
+    <div class="page-title title-buttons">
+        <h1>List Products</h1>
+        <ul class="checkout-types top">
+        </ul>
+    </div>
+    <form action="http://localhost/magento/checkout/cart/updatePost/" method="post">
+        <input name="form_key" type="hidden" value="yVTXSXiDhH4iLdFx">
+        <table id="shopping-cart-table" class="cart-table data-table">
+            <colgroup>
+                <col width="1">
+                <col width="1">
+                <col width="1">
+                <col width="1">
+                <col width="1">
+                <col width="1">
+
+            </colgroup>
+            <thead>
+            <tr class="first last">
+                <th rowspan="1" class="a-center">STT</th>
+                <th rowspan="1" class="a-center">Product Name</th>
+                <th rowspan="1" class="a-center">Product ID</th>
+                <th rowspan="1" class="a-center">Product Price</th>
+                <th rowspan="1" class="a-center">Product Qty</th>
+                <th rowspan="1" class="a-center">Product IMG</th>
+            </tr>
+            </thead>
+            <tfoot>
+            <?php
+            $page = 1;
+            $products = $this->getProducts();
+            foreach ($products as $product)
+            {
+                ?>
+                <tr class="first last">
+                    <td class="product-cart-actions" data-rwd-label="Qty">
+                        <?php  echo $page++ ?>
+                    </td>
+                    <td class="product-cart-actions" data-rwd-label="Qty">
+                        <?php  echo $product->getName() ?>
+                    </td>
+                    <td class="product-cart-actions" data-rwd-label="Qty">
+                        <?php  echo $product->getId() ?>
+                    </td>
+                    <td class="product-cart-actions" data-rwd-label="Qty">
+                        <?php  echo $product->getPrice() ?>
+                    </td>
+                    <td class="product-cart-actions" data-rwd-label="Qty">
+                        <?php  echo $product->getQuantity() ?>
+                    </td>
+                    <td class="product-cart-actions" data-rwd-label="Qty">
+                        <?php
+                        echo '<img src='.$this->helper('catalog/image')->init($product, 'small_image')->resize(150, 150).' width=\'150\' height=\'150\'/>';
+                        ?>
+
+                    </td>
+                    
+                </tr>
+                <?php
+            }
+            ?>
+            <?php echo $this->getPagerHtml() ?>
+            </div>
+
+                </select>
+            </div>
+</div>
+            </tbody>
+        </table>
+        <script type="text/javascript">decorateTable('shopping-cart-table')</script>
+    </form>
+</div>

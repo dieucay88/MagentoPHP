@@ -1,0 +1,43 @@
+<?xml version="1.0" ?>
+<layout version="0.1.0">
+
+    <adminhtml_blog_index>
+        <reference name="content">
+            <block type="giang_blog/adminhtml_registries" name="registries"/>
+        </reference>
+    </adminhtml_blog_index>
+
+    <adminhtml_customer_edit>
+        <reference name="left">
+            <reference name="customer_edit_tabs">
+                <block type="giang_blog/adminhtml_customer_edit_tab_blogpost"
+                       name="tab_blogpost_main"
+                       template="giang/blog/customer/main.phtml">
+                    <block type="giang_blog/adminhtml_customer_edit_tab_blogpost_list"
+                           name="tab_blogpost_list" as="tab_blogpost_list"/>
+                </block>
+                <action method="addTab">
+                    <name>giang_blog1</name>
+                    <block>tab_blogpost_main</block>
+                </action>
+            </reference>
+        </reference>
+    </adminhtml_customer_edit>
+
+    <adminhtml_blog_edit>
+        <reference name="content">
+            <block type="giang_blog/adminhtml_registries_edit"
+                   name="edit_registry_tabs"/>
+        </reference>
+    </adminhtml_blog_edit>
+
+    <adminhtml_blog_new>
+        <reference name="content">
+            <block type="giang_blog/adminhtml_registries_edit"
+                   name="edit_registry_tabffs"/>
+
+        </reference>
+    </adminhtml_blog_new>
+
+
+</layout>

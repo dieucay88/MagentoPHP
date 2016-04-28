@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+    <giang_blog_new>
+        <reference name="content">
+            <!-- Khối block ở giữa -->
+            <!-- Khai báo khối Block tên và template -->
+            <block type="giang_blog/blog" name="test" template="blog/new.phtml"/>
+        </reference>
+    </giang_blog_new>
+
+    <giang_blog_test>
+        <reference name="content">
+            <!-- Khối block ở giữa -->
+            <!-- Khai báo khối Block tên và template -->
+            <block type="giang_blog/blog" name="test" template="blog/page.phtml"/>
+        </reference>
+    </giang_blog_test>
+
+    <giang_blog_edit>
+        <reference name="content">
+            <!-- Khối block ở giữa -->
+            <!-- Khai báo khối Block tên và template -->
+            <block type="giang_blog/blog" name="test" template="blog/edit.phtml"/>
+        </reference>
+    </giang_blog_edit>
+
+</layout>

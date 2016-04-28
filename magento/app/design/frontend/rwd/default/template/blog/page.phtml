@@ -1,0 +1,49 @@
+
+<form action="http://localhost/magento/checkout/cart/updatePost/" method="post">
+    <input name="form_key" type="hidden" value="yVTXSXiDhH4iLdFx">
+    <table id="shopping-cart-table" class="cart-table data-table">
+        <colgroup><col width="1">
+            <col width="1">
+            <col width="1">
+            <col width="1">
+            <col width="1">
+            <col width="1">
+
+        </colgroup>
+        <thead>
+        <tr class="first last">
+            <th rowspan="1" class="a-center">STT</th>
+            <th rowspan="1"><span class="nobr">Full Name</span></th>
+            <th rowspan="1"><span class="nobr">User Name </span></th>
+            <th rowspan="1"><span class="nobr">Pass Word </span></th>
+            <th rowspan="1"><span class="nobr">Edit</span></th>
+            <th rowspan="1"><span class="nobr">Delete</span></th>
+        </tr>
+        </thead>
+        <tbody>
+        <?php
+        $all = $this->getGiang();
+        foreach($all as $a){
+            $data = $a->getData();
+            ?>
+
+            <tr class="first last">
+                <td class="product-cart-actions" data-rwd-label="Qty"><?php echo $a->getUserId() ?></td>
+                <td class="product-cart-actions" data-rwd-label="Qty"><?php echo $a->getFullname() ?></td>
+                <td class="product-cart-actions" data-rwd-label="Qty"><?php echo $a->getUsername() ?></td>
+                <td class="product-cart-actions" data-rwd-label="Qty"><?php echo $a->getPassword() ?></td>
+                <td class="product-cart-actions" data-rwd-label="Qty">
+                    <a href="<?php echo $this->getBaseUrl().'giang/blog/edit/user_id/'.$data['user_id'] ?>" title="Edit Row">Edit</a>
+                </td>
+                <td class="product-cart-actions" data-rwd-label="Qty">
+                    <a href="<?php echo $this->getBaseUrl().'giang/blog/del/user_id/'.$data['user_id'] ?>" title="Delete Row" class="btn-remove btn-remove2">Delete Row</a>
+                </td>
+            </tr>
+
+            <?php
+        }
+        ?>
+        </tbody>
+    </table>
+    <script type="text/javascript">decorateTable('shopping-cart-table')</script>
+</form>

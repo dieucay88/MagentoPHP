@@ -1,0 +1,85 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Giang_Blog>
+            <version>0.1.0</version>
+        </Giang_Blog>
+    </modules>
+
+    <global>
+        <resources>
+            <giang_blog_setup>
+                <setup>
+                    <module>Giang_Blog</module>
+                    <class>Mage_Core_Model_Resource_Setup</class>
+                </setup>
+                <connection>
+                    <use>core_setup</use>
+                </connection>
+            </giang_blog_setup>
+        </resources>
+
+        <models>
+            <giang_blog>
+                <class>Giang_Blog_Model</class>
+                <resourceModel>giang_blog_resource</resourceModel>
+            </giang_blog>
+            <giang_blog_resource>
+                <class>Giang_Blog_Model_Resource</class>
+                <entities>
+                    <blogpost>
+                        <table>giang_blog</table>
+                    </blogpost>
+                </entities>
+            </giang_blog_resource>
+        </models>
+        ​
+        <blocks>
+            <giang_blog>
+                <class>Giang_Blog_Block</class>
+            </giang_blog>
+        </blocks>
+
+        <helpers>
+            <giang_blog>
+                <class>Giang_Blog_Helper</class>
+            </giang_blog>
+        </helpers>
+
+    </global>
+
+    <frontend>
+        <routers>
+            <giang_blog>
+                <use>standard</use>
+                <args>
+                    <module>Giang_Blog</module>
+                    <frontName>blog</frontName>
+                </args>
+            </giang_blog>
+        </routers>
+    </frontend>
+
+    <adminhtml>
+        <layout>
+            <updates>
+                <giang_blog module="giang_blog">
+                    <file>blog.xml</file>
+                </giang_blog>
+            </updates>
+        </layout>
+    </adminhtml>
+
+    <admin>
+        <routers>
+            <adminhtml>
+                <args>
+                    <modules>
+                        <giang_blog before="Mage_Adminhtml">Giang_Blog_Adminhtml</giang_blog>
+                    </modules>
+                </args>
+            </adminhtml>
+        </routers>
+    </admin>
+
+</config>

@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<config>
+    <menu>
+        <giang_blog module="giang_blog">
+            <title>Blog Post</title>
+            <sort_order>99</sort_order>
+            <children>
+                <items module="giang_blog">
+                    <title>Post-1</title>
+                    <sort_order>0</sort_order>
+                    <action>adminhtml/blog/index</action>
+                </items>
+            </children>
+        </giang_blog>
+    </menu>
+    <acl>
+        <resources>
+            <admin>
+                <children>
+                    <blog translate="title" module="giang_blog">
+                        <title>Blog Post</title>
+                        <sort_order>0</sort_order>
+                        <children>
+                            <items translate="title"
+                                   module="giang_blog">
+                                <title>Blog Registries</title>
+                                <sort_order>0</sort_order>
+                            </items>
+                        </children>
+                    </blog>
+                </children>
+            </admin>
+        </resources>
+    </acl>
+</config>
