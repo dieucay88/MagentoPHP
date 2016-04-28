@@ -4,6 +4,9 @@
  * User: DTN
  * Date: 27/04/2016
  * Time: 9:02 SA
+
+
+ 
  */
 class Giang_Blog_Adminhtml_BlogController extends Mage_Adminhtml_Controller_Action{
     public function indexAction(){
