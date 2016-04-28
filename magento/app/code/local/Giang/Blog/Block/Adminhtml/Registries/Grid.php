@@ -14,6 +14,9 @@ class Giang_Blog_Block_Adminhtml_Registries_Grid extends Mage_Adminhtml_Block_Wi
         $this->setDefaultSort('user_id');
         $this->setDefaultDir('ASC');
         $this->setSaveParametersInSession(true);
+
+        $this->setSaveParametersInSession(true);
+        $this->setUseAjax(true);
     }
 
     protected function _prepareCollection()
@@ -81,6 +84,11 @@ class Giang_Blog_Block_Adminhtml_Registries_Grid extends Mage_Adminhtml_Block_Wi
     {
         return $this->getUrl('*/*/edit', array
         ('id' => $row->getUserId()));
+    }
+
+    public function getGridUrl()
+    {
+        return $this->getUrl('*/*/grid', array('_current'=>true));
     }
 
 }

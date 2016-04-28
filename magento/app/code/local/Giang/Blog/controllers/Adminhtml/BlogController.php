@@ -88,4 +88,10 @@ class Giang_Blog_Adminhtml_BlogController extends Mage_Adminhtml_Controller_Acti
         }
         $this->_redirect('*/*/index');
     }
+
+    public function gridAction()
+    {
+        $this->loadLayout();
+        $this->getResponse()->setBody($this->getLayout()->createBlock('giang_blog/adminhtml_registries_grid')->toHtml());
+    }
 }
