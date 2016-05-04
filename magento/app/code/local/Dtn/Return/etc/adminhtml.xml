@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<config>
+    <menu>
+        <dtn_return module="dtn_return">
+            <title>Dtn Return</title>
+            <sort_order>100</sort_order>
+            <children>
+                <items module="dtn_return">
+                    <title>Return-1</title>
+                    <sort_order>0</sort_order>
+                    <action>adminhtml/index/index</action>
+                </items>
+            </children>
+        </dtn_return>
+    </menu>
+    <acl>
+        <resources>
+            <admin>
+                <children>
+                    <return translate="title" module="dtn_return">
+                        <title>Dtn Return</title>
+                        <sort_order>0</sort_order>
+                        <children>
+                            <items translate="title"
+                                   module="dtn_return">
+                                <title>Dtn Registries</title>
+                                <sort_order>0</sort_order>
+                            </items>
+                        </children>
+                    </return>
+                </children>
+            </admin>
+        </resources>
+    </acl>
+</config>

@@ -1,0 +1,60 @@
+<div class="container">
+    <h1><?php echo $this->__('Doi & Tra hang') ?></h1>
+    <form action="<?php echo $this->getUrl('return/index/save') ?>" method="post" id="form-validate">
+        <div class="fieldset">
+            <ul class="form-list">
+                <li>
+                    <label><?php echo $this->__('Họ') ?></label>
+                    <div class="input-box">
+                        <input type="text" name="firstname" value="" class="input-text required-entry"/>
+                    </div>
+                    <label><?php echo $this->__('Tên') ?></label>
+                    <div class="input-box">
+                        <input type="text" name="lastname" value="" class="input-text required-entry" />
+                    </div>
+                    <label><?php echo $this->__('Mã Unique') ?></label>
+                    <div class="input-box">
+                        <input type="text" name="unique" value="" />
+                    </div>
+                    <label><?php echo $this->__('Customer ID') ?></label>
+                    <div class="input-box">
+                        <input type="text" name="customer" value=""  class="input-text required-entry"/>
+                    </div>
+                    <label><?php echo $this->__('Số đơn hàng') ?></label>
+                    <div class="input-box">
+                        <input type="text" name="oder" value="" />
+                    </div>
+                    <label><?php echo $this->__('Mã SKU') ?></label>
+                    <div class="input-box">
+                        <input type="text" name="sku" value=""  />
+                    </div>
+                    <label><?php echo $this->__('Lý do') ?></label>
+                    <div class="input-box">
+                        <input type="text" name="pending" value=""  class="input-text required-entry"/>
+                    </div>
+                    <label><?php echo $this->__('Notes') ?></label>
+                    <div class="input-box">
+                        <input type="text" name="notes" value="" class="input-text required-entry" />
+                    </div>
+                    <label><?php echo $this->__('Trạng thái ') ?></label>
+                    <div class="input-box">
+                        <input type="text" name="" value="" class="input-text required-entry" />
+                    </div>
+                    <label><?php echo $this->__('Ảnh Upload') ?></label>
+                    <div class="input-box">
+                        <input type="text" name="image" value="" class="input-text required-entry" />
+                    </div>
+                </li>
+
+            </ul>
+        </div>
+        <div class="buttons-set">
+        <button type="submit" title="<?php echo Mage::helper('core')->quoteEscape($this->__('Submit')) ?>" class="button"><span><span><?php echo $this->__('Submit') ?></span></span></button>
+    </div>
+    </form>
+</div>
+<script type="text/javascript">
+    //< ![CDATA[
+    var customForm = new VarienForm('form-validate');
+    //]]>
+</script>

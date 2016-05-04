@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+    <return_index_index>
+        <!-- return/index/index -->
+        <reference name="content">
+            <block type="dtn_return/return" name="return" template="dtn/return.phtml"/>
+        </reference>
+    </return_index_index>
+
+    <return_index_list>
+        <!-- return/index/index -->
+        <reference name="content">
+            <block type="dtn_return/return" name="return" template="dtn/list.phtml"/>
+        </reference>
+    </return_index_list>
+</layout>

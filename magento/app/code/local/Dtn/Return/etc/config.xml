@@ -1,0 +1,129 @@
+<?xml version="1.0"?>
+<config>
+    /***
+    Modules Version **/
+    <modules>
+        <Dtn_Return>
+            <version>1.0.9</version>
+        </Dtn_Return>
+    </modules>
+
+
+
+
+    /**
+    Begin Global **/
+    <global>
+        /**
+        Resources **/
+        <resources>
+            /**
+            Setup Database **/
+            <dtn_return_setup>
+                <setup>
+                    <module>Dtn_Return</module>
+                    <class>Dtn_Return_Model_Resource_Setup</class>
+                </setup>
+            </dtn_return_setup>
+        </resources>
+        /**
+        Block **/
+        <blocks>
+            <dtn_return>
+                <class>Dtn_Return_Block</class>
+            </dtn_return>
+        </blocks>
+        /**
+        Helper **/
+        <helpers>
+            <dtn_return>
+                <class>Dtn_Return_Helper</class>
+            </dtn_return>
+        </helpers>
+        /**
+        Models **/
+        <models>
+
+            <dtn_return>
+                <class>Dtn_Return_Model</class>
+                <resourceModel>dtn_return_resource</resourceModel>
+            </dtn_return>
+
+            <dtn_return_resource>
+                <class>Dtn_Return_Model_Resource</class>
+                <entities>
+                    /**
+                    Dtn_return Table**/
+                    <return>
+                        <table>dtn_return</table>
+                    </return>
+                    /**
+                    Dtn_reason Table**/
+                    <reason>
+                        <table>dtn_reason</table>
+                    </reason>
+                </entities>
+            </dtn_return_resource>
+
+        </models>
+    </global>
+    /**
+    End Global***/
+
+
+
+    /**
+    Begin FrontEnd **/
+    <frontend>
+        /**
+        Layout **/
+        <layout>
+            <updates>
+                <dtn_return>
+                    <file>dtn_return.xml</file>
+                </dtn_return>
+            </updates>
+        </layout>
+        /**
+        Routers **/
+        <routers>
+
+            <return>
+                <use>standard</use>
+                <args>
+                    <module>Dtn_Return</module>
+                    <frontName>return</frontName>
+                </args>
+            </return>
+
+        </routers>
+
+    </frontend>
+    /***
+    END FrontEnd**/
+    /**
+    Admin HTML **/
+    <adminhtml>
+        <layout>
+            <updates>
+                <dtn_return module="dtn_return">
+                    <file>dtn.xml</file>
+                </dtn_return>
+            </updates>
+        </layout>
+    </adminhtml>
+    /**
+    Router Admin**/
+    <admin>
+        <routers>
+            <adminhtml>
+                <args>
+                    <modules>
+                        <dtn_return before="Mage_Adminhtml">Dtn_Return_Adminhtml</dtn_return>
+                    </modules>
+                </args>
+            </adminhtml>
+        </routers>
+    </admin>
+
+</config>

@@ -1,0 +1,42 @@
+<?xml version="1.0" ?>
+<layout version="0.1.0">
+
+    <adminhtml_index_index>
+        <reference name="content">
+            <block type="dtn_return/adminhtml_registries" name="registries"/>
+        </reference>
+    </adminhtml_index_index>
+
+    <adminhtml_customer_edit>
+        <reference name="left">
+            <reference name="customer_edit_tabs">
+                <block type="dtn_return/adminhtml_customer_edit_tab_return"
+                       name="tab_return_main"
+                       template="dtn/return/customer/return.phtml">
+                    <block type="dtn_return/adminhtml_customer_edit_tab_return_list"
+                           name="tab_return_list" as="tab_return_list"/>
+                </block>
+                <action method="addTab">
+                    <name>dtn_return1</name>
+                    <block>tab_return_main</block>
+                </action>
+            </reference>
+        </reference>
+    </adminhtml_customer_edit>
+
+    <adminhtml_return_edit>
+        <reference name="content">
+            <block type="dtn_return/adminhtml_registries_edit"
+                   name="edit_registry_tabs"/>
+        </reference>
+    </adminhtml_return_edit>
+
+    <adminhtml_index_new>
+        <reference name="content">
+            <block type="dtn_return/adminhtml_registries_edit"
+                   name="edit_registry_tabs2"/>
+        </reference>
+    </adminhtml_index_new>
+
+
+</layout>
