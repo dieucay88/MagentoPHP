@@ -13,4 +13,11 @@
             <block type="dtn_return/return" name="return" template="dtn/list.phtml"/>
         </reference>
     </return_index_list>
+
+    <return_index_show>
+        <!-- return/index/index -->
+        <reference name="content">
+            <block type="dtn_return/return" name="return" template="dtn/show.phtml"/>
+        </reference>
+    </return_index_show>
 </layout>

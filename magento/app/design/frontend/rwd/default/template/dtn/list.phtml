@@ -1,9 +1,74 @@
+<?php
+$all = $this->postReturn();
+foreach($all as $a)
+{
+    $data = $a->getData();
+}
+?>
 <div class="page-title">
     <h1> Hoa Don </h1>
-    <?php
-     $model = $this->postReturn();
-     echo '<pre>';
-     print_r($model->getData());
+   <a href="<?php echo $this->getBaseUrl().'return/index/show/unique/'.$data['unique']?>">Click COMMENT !!!!</a>
+</div>
 
-    ?>
+<div class="cart display-single-price">
+    <div class="page-title title-buttons">
+        <h1>List Return </h1>
+    </div>
+    <form action="" method="post">
+        <input name="form_key" type="hidden" value="yVTXSXiDhH4iLdFx">
+        <table id="shopping-cart-table" class="cart-table data-table">
+            <colgroup><col width="1">
+                <col width="1">
+                <col width="1">
+                <col width="1">
+                <col width="1">
+                <col width="1">
+
+            </colgroup>
+            <thead>
+            <tr class="first last">
+                <th rowspan="1" class="a-center">STT</th>
+                <th rowspan="1"><span class="nobr">Unique</span></th>
+                <th rowspan="1"><span class="nobr">Customer</span></th>
+                <th rowspan="1"><span class="nobr">Order ID</span></th>
+                <th rowspan="1"><span class="nobr">Product SKU At</span></th>
+                <th rowspan="1"><span class="nobr">Note</span></th>
+                <th rowspan="1"><span class="nobr">Created At</span></th>
+                <th rowspan="1"><span class="nobr">View</span></th>
+            </tr>
+            </thead>
+            <tfoot>
+            <?php
+            $returnsCustomer = $this->getListReturnCustomer();
+            $stt = 1;
+            if(count($returnsCustomer)){
+                foreach($returnsCustomer as $return){
+                    ?>
+                    <tr class="first last">
+                        <td class="product-cart-actions" data-rwd-label="Qty"><?php echo $stt++ ?></td>
+                        <td class="product-cart-actions" data-rwd-label="Qty"><?php echo $return->getUnique() ?></td>
+                        <td class="product-cart-actions" data-rwd-label="Qty"><?php echo $return->getCustomer() ?></td>
+                        <td class="product-cart-actions" data-rwd-label="Qty"><?php echo $return->getOder() ?></td>
+                        <td class="product-cart-actions" data-rwd-label="Qty"><?php echo $return->getSku() ?></td>
+                        <td class="product-cart-actions" data-rwd-label="Qty"><?php echo $return->getNotes() ?></td>
+                        <td class="product-cart-actions" data-rwd-label="Qty"><?php echo $return->getCreatedAt() ?></td>
+                        <td class="product-cart-actions" data-rwd-label="Qty">
+                            <a href="<?php echo $this->getBaseUrl().'return/index/show/unique/'.$return->getUnique() ?>" title="View">View Detail</a>
+                        </td>
+                    </tr>
+                    <?php
+                }
+            }else{
+                ?>
+                <tr>
+                    <td colspan="7">No result</td>
+                </tr>
+                <?php
+            }
+            ?>
+            </tbody>
+        </table>
+        <script type="text/javascript">decorateTable('shopping-cart-table')</script>
+    </form>
+    <?php //echo //$this->getPagerHtml() ?>
 </div>
